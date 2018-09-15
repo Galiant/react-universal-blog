@@ -8,25 +8,25 @@ Building a React Universal Blog App that will first render markup on the server 
 
 ## Run on local machine
 
-1.  Clone repository to local machine using:
+1. Clone repository to local machine using:
 
 ```
 git clone https://github.com/Galiant/react-universal-blog.git
 ```
 
-2.  Go into the application folder:
+2. Go into the application folder:
 
 ```
 cd react-universal-blog
 ```
 
-3.  Install dependencies using`npm` command line tool:
+3. Install dependencies using`npm` command line tool:
 
 ```
 npm install
 ```
 
-4.  Run the application, again using `npm`:
+4. Run the application, again using `npm`:
 
 ```
 npm start
@@ -54,3 +54,5 @@ http://localhost:3000
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader) for hot loading in development
 - [Flux](https://facebook.github.io/flux/) for data flow
 - [Cosmic JS](https://cosmicjs.com/) for content management
+- [Babel](https://babeljs.io/) for convert our ES6 and React JSX into browser-compatible JavaScript
+- [Webpack](https://github.com/webpack/webpack) for bringing everything together into a bundle.js file
