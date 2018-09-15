@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-Building a React Universal Blog App that will first render markup on the server side to make our content available to search engines. Then, it will let the browser take over in a single page application that is both fast and responsive.
+Building a React Universal Blog App that will first render markup on the server side to make our content available to search engines. Then, it will let the browser take over in a single page application that is both fast and responsive. This app is build per tutorial from [Sitepoint](https://github.com/sitepoint-editors/react-universal-blog).
 
 ## Run on local machine
 
@@ -38,12 +38,23 @@ npm start
 http://localhost:3000
 ```
 
-## How to run a production build
+## How to run a development build
 
-- npm run build
-- npm install -g serve
-- serve -s build
-- open `http://localhost:5000`
+- npm run development
+- open `http://localhost:8080`
+
+## Configure your Cosmic JS bucket
+
+After setting up your bucket on Cosmic JS, edit the config.js file and edit the slug to point to the slug of your bucket:
+
+```
+// config.js
+export default {
+  bucket: {
+    slug: 'react-universal-blog'
+  }
+}
+```
 
 ## Dependencies
 
@@ -56,3 +67,4 @@ http://localhost:3000
 - [Cosmic JS](https://cosmicjs.com/) for content management
 - [Babel](https://babeljs.io/) for convert our ES6 and React JSX into browser-compatible JavaScript
 - [Webpack](https://github.com/webpack/webpack) for bringing everything together into a bundle.js file
+- [Bootstrap Blog Theme](https://startbootstrap.com/template-overviews/clean-blog/) focusing more on functionality than style, here I’ll use a pre-built front-end theme
