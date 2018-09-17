@@ -10,7 +10,7 @@ import routes from "./routes";
 
 const Routes = (
   <Router history={history}>
-    {routes} 
+    {routes}
   </Router>
 )
 
