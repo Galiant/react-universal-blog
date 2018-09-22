@@ -1,4 +1,4 @@
-// Default.js
+// NoMatch.js
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import config from '../../config'
@@ -9,42 +9,28 @@ import Header from '../Partials/Header'
 // Dispatcher
 import AppDispatcher from '../../dispatcher/AppDispatcher'
 
-export default class Default extends Component {
+export default class NoMatch extends Component {
 
   componentWillMount() {
     this.getPageData()
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     const data = this.props.data
-    document.title = config.site.title + ' | ' + data.page.title
-
-    // Updated
-    const page = data.page
-    const page_slug = this.getSlug()
-    if (page.slug !== page_slug)
-      this.getPageData(page_slug)
-  }
-
-  getSlug() {
-    return this.props.location.pathname.replace('/', '')
+    document.title = config.site.title + ' | Page Not Found'
   }
 
   getPageData() {
-    const page_slug = this.getSlug()
     AppDispatcher.dispatch({
       action: 'get-page-data',
-      page_slug: page_slug
+      slug: 'home'
     })
   }
 
   render() {
 
-    const slug = this.getSlug()
     const data = this.props.data
     const page = data.page
-
-    let main_content = <div dangerouslySetInnerHTML={{ __html: page.content }}></div>
 
     return (
       <div>
@@ -52,7 +38,13 @@ export default class Default extends Component {
         <div id="main-content" className="container">
           <div className="row">
             <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-              {main_content}
+              <div className="text-center">
+                Whoa!  Looks like you stumbled down a worm hole!<br />
+                If this is a new page that you've added in Cosmic JS, make sure you add it to your <code>routes.js</code> file!
+                <br />
+                <br />
+                <Link to="/">Take me home</Link>
+              </div>
             </div>
           </div>
         </div>
