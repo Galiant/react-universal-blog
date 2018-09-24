@@ -1,6 +1,5 @@
 import { EventEmitter } from 'events'
 import _ from 'lodash'
-import { on } from 'cluster';
 
 export default _.extend({}, EventEmitter.prototype, {
 
