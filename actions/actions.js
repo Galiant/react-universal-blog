@@ -2,13 +2,15 @@ import config from '../config'
 import Cosmic from 'cosmicjs'
 import _ from 'lodash'
 
-//AppStore
+// AppStore
 import AppStore from '../stores/AppStore'
 
 export function getStore(callback) {
+
   let pages = {}
 
   Cosmic.getObjects(config, function (err, response) {
+
     let objects = response.objects
 
     // Globals
@@ -36,7 +38,7 @@ export function getStore(callback) {
 
     // Nav
     const nav_items = response.object['nav'].metafields
-    global.nav_items = nav_items
+    globals.nav_items = nav_items
 
     AppStore.data.globals = globals
 
@@ -62,10 +64,12 @@ export function getStore(callback) {
     if (callback) {
       callback(false, AppStore)
     }
+
   })
 }
 
 export function getPageData(page_slug, post_slug) {
+
   if (!page_slug || page_slug === 'blog')
     page_slug = 'home'
 
@@ -74,7 +78,6 @@ export function getPageData(page_slug, post_slug) {
   const pages = data.pages
   const page = _.find(pages, { slug: page_slug })
   const metafields = page.metafields
-
   if (metafields) {
     const hero = _.find(metafields, { key: 'hero' })
     page.hero = config.bucket.media_url + '/' + hero.value
@@ -92,19 +95,18 @@ export function getPageData(page_slug, post_slug) {
       const article = _.find(articles, { slug: post_slug })
       page.title = article.title
     }
-
     if (page_slug === 'work') {
       const work_items = data.work_items
       const work_item = _.find(work_items, { slug: post_slug })
       page.title = work_item.title
     }
   }
-
   AppStore.data.page = page
   AppStore.emitChange()
 }
 
 export function getMoreItems() {
+
   AppStore.data.loading = true
   AppStore.emitChange()
 
