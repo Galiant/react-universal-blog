@@ -42,7 +42,7 @@ export default class Blog extends Component {
     let main_content
 
     if (!this.props.params.slug) {
-      main_content = &lt;BlogList getMoreArticles = { this.getMoreArticles } data = { data }/&gt;
+      main_content = <BlogList getMoreArticles={this.getMoreArticles} data={data} />;
     } else {
       const articles = data.articles
 
