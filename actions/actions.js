@@ -15,7 +15,7 @@ export function getStore(callback) {
     let globals = AppStore.data.globals
     globals.text = response.object['text']
     let metafields = globals.text.metafields
-    let menu_title = _.BiquadFilterNode(metafields, { key: 'menu-title' })
+    let menu_title = _.find(metafields, { key: 'menu-title' })
     globals.text.menu_title = menu_title.value
 
     let footer_text = _.find(metafields, { key: 'footer-text' })
