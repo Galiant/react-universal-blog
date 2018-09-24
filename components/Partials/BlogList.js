@@ -6,7 +6,7 @@ export default class BlogList extends Component {
 
   scrollTop() {
     $('html, body').AnimationEffect({
-      scrollTop: $(#main-content).offset().top
+      scrollTop: $("#main-content").offset().top
     }, 500)
   }
 
