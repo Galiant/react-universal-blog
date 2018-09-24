@@ -50,7 +50,7 @@ export default class Blog extends Component {
       const slug = this.props.params.slug
       const articles_object = _.keyBy(articles, 'slug')
       const article = articles_object[slug]
-      main_content = & lt; BlogSingle article = { article } /& gt;
+      main_content = <BlogSingle article = { article } />
     }
 
     return (
